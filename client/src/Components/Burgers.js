@@ -6,22 +6,26 @@ import { BsStar } from 'react-icons/bs'
 
 export default class Burgers extends Component {
 
-    state = {
-        setallBurgers: [],
+    constructor() {
+        super();
+        this.state = { setallBurgers: [] }
+
     }
 
-    GetData = () => Axios.get('/Burgers')
-        .then(res => {
-            const burger = res.data
-            this.setState({ setallBurgers: burger })
-            console.log('this is server call!!!!')
 
-        })
-        .catch(err => {
-            console.log(err);
-        })
-    componentDidMount() {
-        this.GetData();
+
+
+    async componentDidMount() {
+        const respond = await Axios.get('/Burgers')
+            .then(res => {
+                const burger = res.data
+                this.setState({ setallBurgers: burger })
+                console.log('this is server call!!!!')
+
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
     isLoaded = () => {
         window.scroll(0, 0);
@@ -85,9 +89,9 @@ export default class Burgers extends Component {
                                             },
                                         }}
                                         >      <button
-                                        class="w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-blue-500 hover:border-blue-600 hover:bg-yellow-500 hover:text-yellow shadow-md py-2 px-6 inline-flex items-center">
-                                        <span class="mx-auto">Order</span>
-                                      </button></Link></span>
+                                            class="w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-blue-500 hover:border-blue-600 hover:bg-yellow-500 hover:text-yellow shadow-md py-2 px-6 inline-flex items-center">
+                                                <span class="mx-auto">Order</span>
+                                            </button></Link></span>
                                     </button>
                                 </div>
                             </div>
