@@ -16,7 +16,7 @@ export default class Burgers extends Component {
 
 
     async componentDidMount() {
-        const respond = await Axios.get('https://flamboyant-saha-647ec4.netlify.app/Burgers')
+        const respond = await Axios.get('/Burgers')
             .then(res => {
                 const burger = res.data
                 this.setState({ setallBurgers: burger })
@@ -33,6 +33,7 @@ export default class Burgers extends Component {
     render() {
         console.log('setallBurgers', this.state.setallBurgers)
         console.log('process.env.NODE_ENV',process.env.NODE_ENV)
+
         return (
             <div>
 
