@@ -11,7 +11,7 @@ export default class Burgers extends Component {
         this.state = { setallBurgers: [] }
 
     }
-
+    
 
 
 
@@ -32,6 +32,7 @@ export default class Burgers extends Component {
     }
     render() {
         console.log('setallBurgers', this.state.setallBurgers)
+        console.log('process.env.NODE_ENV',process.env.NODE_ENV)
         return (
             <div>
 
