@@ -5,18 +5,15 @@ function generateFullUrl() {
       ? process.env.REACT_APP_DOMAIN
       : "localhost:5000";
   const http = process.env.NODE_ENV === "production" ? "https" : "http";
-  console.log('domain==================================================================',domain)
-  console.log('domain==================================================================',process.env.NODE_ENV)
-  console.log('domain==================================================================',process.env.REACT_APP_DOMAIN)
 
-  
+  console.log('domain',domain)
   return `${http}://${domain}`;
 }
 
 const api = axios.create({
   baseURL: generateFullUrl() + "/api",
 });
-console.log('domain',generateFullUrl())
+console.log('generateFullUrl',generateFullUrl())
 export const getAllBurgers = api.get("/Burgers").then(res => {
     console.log('res.data',res.data)
   

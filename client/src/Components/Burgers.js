@@ -3,7 +3,7 @@ import Axios from 'axios'
 import { Component } from 'react'
 import { Link } from "react-router-dom";
 import { BsStar } from 'react-icons/bs'
-import {getAllBurgers} from '../api/index'
+import { getAllBurgers } from '../api/index'
 export default class Burgers extends Component {
 
     constructor() {
@@ -11,29 +11,35 @@ export default class Burgers extends Component {
         this.state = { setallBurgers: [] }
 
     }
-    
-
-
 
     async componentDidMount() {
-        const respond = await Axios.get('/Burgers')
-            .then(res => {
-                const burger = res.data
-                this.setState({ setallBurgers: burger })
-                console.log('this is server call!!!!')
-
-            })
-            .catch(err => {
-                console.log(err);
-            })
+        const respond = await getAllBurgers.then(data => {
+            console.log('data', data)
+            this.setState({ setallBurgers: data })
+        }).catch(err => {
+            console.log(err)
+        })
     }
+
+
+    // async componentDidMount() {
+    //     const respond = await Axios.get('/Burgers')
+    //         .then(res => {
+    //             const burger = res.data
+    //             this.setState({ setallBurgers: burger })
+    //             console.log('this is server call!!!!')
+
+    //         })
+    //         .catch(err => {
+    //             console.log(err);
+    //         })
+    // }
     isLoaded = () => {
         window.scroll(0, 0);
     }
+
     render() {
         console.log('setallBurgers', this.state.setallBurgers);
-        console.log('process.env.NODE_ENV',process.env.NODE_ENV);
-        console.log('GetAllBurgers',getAllBurgers)
 
         return (
             <div>
