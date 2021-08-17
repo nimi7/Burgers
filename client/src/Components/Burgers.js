@@ -3,6 +3,7 @@ import Axios from 'axios'
 import { Component } from 'react'
 import { Link } from "react-router-dom";
 import { BsStar } from 'react-icons/bs'
+import {getAllBurgers} from '../api/index'
 export default class Burgers extends Component {
 
     constructor() {
@@ -30,9 +31,9 @@ export default class Burgers extends Component {
         window.scroll(0, 0);
     }
     render() {
-        console.log('setallBurgers', this.state.setallBurgers)
-        console.log('process.env.NODE_ENV',process.env.NODE_ENV)
-        console.log('REACT_APP_DOMAIN',REACT_APP_DOMAIN)
+        console.log('setallBurgers', this.state.setallBurgers);
+        console.log('process.env.NODE_ENV',process.env.NODE_ENV);
+        console.log('GetAllBurgers',getAllBurgers)
 
         return (
             <div>
