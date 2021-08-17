@@ -16,7 +16,7 @@ export default class Burgers extends Component {
 
 
     async componentDidMount() {
-        const respond = await Axios.get('https://611a9844517dca0007a620d0--flamboyant-saha-647ec4.netlify.app/Burgers')
+        const respond = await Axios.get('https://flamboyant-saha-647ec4.netlify.app/Burgers')
             .then(res => {
                 const burger = res.data
                 this.setState({ setallBurgers: burger })

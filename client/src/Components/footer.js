@@ -36,6 +36,7 @@ export default function Footer() {
                     </div>
                     <div class="opacity-60 pt-2">
                         <p>© Tanks For Order.</p>
+                        <h1>after updateData</h1>
                     </div>
                 </div>
             </div>
