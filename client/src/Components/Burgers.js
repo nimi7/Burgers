@@ -16,7 +16,7 @@ export default class Burgers extends Component {
 
 
     async componentDidMount() {
-        const respond = await Axios.get('https://my-burger-appl.herokuapp.com/api/Burgers')
+        const respond = await Axios.get('/Burgers')
             .then(res => {
                 const burger = res.data
                 this.setState({ setallBurgers: burger })
