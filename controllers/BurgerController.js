@@ -2,9 +2,9 @@ const router = require("express").Router();
 const Burgers = require('../models/Burgers')
 const moment = require('moment')
 
-router.get("/Burgers", (req, res) => {
+router.get("/Burgers", async (req, res) => {
     
-  return Burgers.find({})   
+  return  Burgers.find({})   
     .then((date) => {
       res.status(200).send(date);      
     })
@@ -108,4 +108,14 @@ Burgers.findByIdAndUpdate(
 
 module.exports = router;
 
-  
+// router.get("/Burgers", (req, res) => {
+    
+//   return Burgers.find({})   
+//     .then((date) => {
+//       res.status(200).send(date);      
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       res.status(500);
+//     });
+// });
