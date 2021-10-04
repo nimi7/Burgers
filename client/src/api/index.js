@@ -14,7 +14,9 @@ const api = axios.create({
   baseURL: generateFullUrl() + "/api",
 });
 console.log('generateFullUrl',generateFullUrl())
-export const getAllBurgers = api.get("/Burgers").then(res => {
+
+
+export const GetAllBurgers = api.get("/Burgers").then(res => {
     console.log('res.data',res.data)
   
     return res.data
@@ -29,4 +31,6 @@ export const BurgersID = (id) => api.get(`Burgers/:${id}`).then(res =>{
   });
 
 
-  
+  const apis = { GetAllBurgers, BurgersID };
+
+  export default apis;
