@@ -9,6 +9,7 @@ export default function Burgers() {
 
     const [allBurgers, setallBurgers] = useState([]);
 
+    
     GetAllBurgers.then(data => {
         console.log('data', data)
         setallBurgers(data)
@@ -65,7 +66,7 @@ console.log('getAllBurgers',allBurgers)
                                 <button
                                     class='ml-auto flex items-center gap-1 sm:text-lg border border-gray-300 px-3 py-1 rounded-full hover:bg-gray-50 transition-colors focus:bg-gray-100 focus:outline-none focus-visible:border-gray-500'
                                 >
-                                    <span><Link onClick={this.isLoaded()} to={{
+                                    <span><Link onClick={isLoaded} to={{
                                         pathname: `/Burgers/${props._id}`,
                                         state: {
                                             Food: props.Food,

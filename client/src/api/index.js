@@ -3,7 +3,7 @@ function generateFullUrl() {
   const domain =
     process.env.NODE_ENV === "production"
       ? process.env.REACT_APP_DOMAIN
-      : "localhost:5000";
+      : "my-burger-appl.herokuapp.com";
   const http = process.env.NODE_ENV === "production" ? "https" : "http";
 
   console.log('domain',domain)
