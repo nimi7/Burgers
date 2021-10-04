@@ -42,7 +42,7 @@ export default function Burgers() {
 
 
     console.log('getAllBurgers', allBurgers)
-    if (load == false) {
+    if (allBurgers.length < 1) {
         return (
             <Loading />
         )
